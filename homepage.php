@@ -2,8 +2,9 @@
 
 <section class="hero">
   <div class="hero-content">
-    <h1>Find your profession</h1>
+    <h1>Mentorz</h1>
     <p>Your journey to professional growth starts with the right mentor</p>
+    <p>Find your profession</p>
     <a href="#join" class="cta-button">Start Quiz</a>
   </div>
 </section>
@@ -12,12 +13,12 @@
   <h2>Meet Our Mentors</h2>
   <div class="steps">
     <div class="step">
-      <a href="#join" class="cta-button">Sign Up</a>
-      <p>Create a profile and tell us your goals.</p>
+      <a href="#join" class="cta-button">profile</a>
+      <p>Create a profile and tell us your goals</p>
     </div>
     <div class="step">
-      <a href="#join" class="cta-button">Connect</a>
-      <p>We’ll connect you with mentors in your field.</p>
+      <a href="#join" class="cta-button">mentors</a>
+      <p>Already have an account? Connect with our mentors</p>
     </div>
   </div>
 </section>
@@ -102,7 +103,7 @@
 
     /* Info Section */
     .info-section {
-    padding: 60px 40px;
+    padding: 3rem 20px;
     text-align: center;
     }
 
@@ -126,22 +127,5 @@
     }
 
     
-<style>
-</head>
-<body>
-  <header class="navbar">
-    <div class="logo">Mentorz</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#mentors">Find a Mentor</a></li>
-      </ul>
-    </nav>
-  </header>
-  <footer>
-    <p>&copy; <?php echo date('Y'); ?> MentorLink. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+</style>
 

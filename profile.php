@@ -1,58 +1,76 @@
 <?php
-require 'db.php';
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
-  header("Location: login.php");
-  exit();
-}
+// Simulate a logged-in user (replace with real auth later)
+$_SESSION['user_id'] = 1;
 
+// Simulate saved name/bio for simplicity
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $name = $_POST['name'];
-  $field = $_POST['field'];
-  $experience = $_POST['experience'];
-  $interest = $_POST['interest'];
-
-  $stmt = $conn->prepare("INSERT INTO profiles (user_id, name, field, experience, interest) VALUES (?, ?, ?, ?, ?)");
-  $stmt->bind_param("issss", $_SESSION['user_id'], $name, $field, $experience, $interest);
-  $stmt->execute();
-
-  header("Location: profile.php");
-  exit();
-}
-?>
-
-<form method="POST">
-  <h2>Create Your Profile</h2>
-  <input name="name" required placeholder="Full Name">
-  <input name="field" required placeholder="Field (e.g., Software Engineering)">
-  <input name="experience" required placeholder="Experience (e.g., 3 years)">
-  <input name="interest" required placeholder="Mentorship Interest">
-  <button type="submit">Save Profile</button>
-</form>
-<?php
-require 'db.php';
-session_start();
-
-if (!isset($_SESSION['user_id'])) {
-  header("Location: login.php");
-  exit();
+    $_SESSION['name'] = $_POST['name'] ?? '';
+    $_SESSION['bio'] = $_POST['bio'] ?? '';
 }
 
-$stmt = $conn->prepare("SELECT name, field, experience, interest FROM profiles WHERE user_id = ?");
-$stmt->bind_param("i", $_SESSION['user_id']);
-$stmt->execute();
-$result = $stmt->get_result();
+// Simulated connected mentors (this could come from a database)
+$connectedMentors = [
+    "Sarah Johnson – Senior Software Engineer",
+    "Marcus Lee – Marketing Strategist",
+    "Ava Chen – Product Manager at TechNova"
+];
 
-if ($profile = $result->fetch_assoc()) {
 ?>
-  <h2>Welcome, <?= htmlspecialchars($profile['name']) ?></h2>
-  <p><strong>Field:</strong> <?= htmlspecialchars($profile['field']) ?></p>
-  <p><strong>Experience:</strong> <?= htmlspecialchars($profile['experience']) ?></p>
-  <p><strong>Mentorship Interest:</strong> <?= htmlspecialchars($profile['interest']) ?></p>
-  <a href="logout.php">Logout</a>
-<?php
-} else {
-  echo "<p>No profile found. <a href='create_profile.php'>Create one</a></p>";
+
+<section class="info-section">
+  <h2>Your Profile</h2>
+  
+  <form method="POST" class="profile-form">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" value="<?= htmlspecialchars($_SESSION['name'] ?? '') ?>" required />
+
+    <label for="bio">Bio</label>
+    <textarea name="bio" id="bio" rows="5" required><?= htmlspecialchars($_SESSION['bio'] ?? '') ?></textarea>
+
+    <button type="submit" class="cta-button">Save Profile</button>
+  </form>
+</section>
+
+<section class="info-section">
+  <h2>Connected Mentors</h2>
+  <ul class="mentor-list">
+    <?php foreach ($connectedMentors as $mentor): ?>
+      <li><?= htmlspecialchars($mentor) ?></li>
+    <?php endforeach; ?>
+  </ul>
+</section>
+
+<style>
+.profile-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
 }
-?>
+
+.profile-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.profile-form input,
+.profile-form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.mentor-list {
+  list-style-type: disc;
+  text-align: left;
+  max-width: 600px;
+  margin: 30px auto;
+  padding-left: 20px;
+}
+</style>
