@@ -23,7 +23,7 @@
           <i class="uil uil-dashboard"></i>
           <span class="link-name">Dashboard</span>
         </a></li>
-        <li><a href="mentors.php">
+        <li><a href="mentors2.php">
           <i class="uil uil-users-alt"></i>
           <span class="link-name">Mentors</span>
         </a></li>
