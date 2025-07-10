@@ -18,11 +18,11 @@
       height: 100%;
       width: 100%;
       place-items: center;
-      background: linear-gradient(to right, #C13A2F, #D171A2, #8052A1, #5170B4, #4FA798, #A3C454, #E0E252);
+      background: linear-gradient(to right, #3a8ddb, #65aee0, #a2d2f2);
     }
 
     ::selection {
-      background: #8052A1;
+      background: #3a8ddb;
       color: #fff;
     }
 
@@ -90,7 +90,7 @@
       left: 0;
       z-index: 0;
       border-radius: 5px;
-      background: linear-gradient(to right, #C13A2F, #D171A2, #8052A1, #5170B4, #4FA798, #A3C454, #E0E252);
+      background: linear-gradient(to right, #3a8ddb, #65aee0, #a2d2f2);
       transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
     }
 
@@ -155,7 +155,7 @@
     }
 
     .form-inner form .field input:focus {
-      border-color: #8052A1;
+      border-color: #3a8ddb;
     }
 
     .form-inner form .field input::placeholder {
@@ -174,14 +174,14 @@
 
     .form-inner form .pass-link a,
     .form-inner form .signup-link a {
-      color: #D171A2;
+      color: #65aee0;
       text-decoration: none;
     }
 
     .form-inner form .pass-link a:hover,
     .form-inner form .signup-link a:hover {
       text-decoration: underline;
-      color: #8052A1;
+      color: #3a8ddb;
     }
 
     .btn {
@@ -197,7 +197,7 @@
       width: 300%;
       position: absolute;
       left: -100%;
-      background: linear-gradient(to right, #C13A2F, #D171A2, #8052A1, #5170B4, #4FA798, #A3C454, #E0E252);
+      background: linear-gradient(to right, #3a8ddb, #65aee0, #a2d2f2);
       border-radius: 5px;
       transition: all 0.4s ease;
     }
@@ -302,12 +302,12 @@
 
     function redirectAfterLogin(event) {
       event.preventDefault();
-      window.location.href = "profile.php"; // replace with your actual page
+      window.location.href = "homepage.php"; // replace with your actual page
     }
 
     function redirectAfterSignup(event) {
       event.preventDefault();
-      window.location.href = "profile.php"; // replace with your actual page
+      window.location.href = "homepage.php"; // replace with your actual page
     }
   </script>
 

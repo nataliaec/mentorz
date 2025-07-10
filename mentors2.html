@@ -1,0 +1,71 @@
+<div class="profiles-container">
+  <div class="profile-card">
+    <h2>John Doe</h2>
+    <h4>Software Engineer</h4>
+    <p class="about">
+      Passionate about building scalable web applications and open source contributions.
+    </p>
+    <p class="availability">
+      <strong>Availability:</strong> Full-time
+    </p>
+  </div>
+
+  <div class="profile-card">
+    <h2>Jane Smith</h2>
+    <h4>Product Manager</h4>
+    <p class="about">
+      Experienced in leading cross-functional teams to deliver user-centered products.
+    </p>
+    <p class="availability">
+      <strong>Availability:</strong> Part-time
+    </p>
+  </div>
+</div>
+
+<style>
+    .profiles-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 20px;
+}
+
+.profile-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fafafa;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.profile-card h2 {
+  margin: 0 0 6px;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.profile-card h4 {
+  margin: 0 0 12px;
+  font-weight: 500;
+  color: #666;
+}
+
+.profile-card .about {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #444;
+  margin-bottom: 14px;
+}
+
+.profile-card .availability {
+  font-size: 0.9rem;
+  color: #007700;
+  font-weight: 600;
+}
+
+</style>
