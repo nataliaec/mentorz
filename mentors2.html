@@ -6,10 +6,58 @@
 <title>Profile Filter</title>
 <style>
   .profile {
+    display: block;
     border: 1px solid #ddd;
-    margin: 5px;
-    padding: 10px;
-    border-radius: 4px;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  #profilesContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  #availabilityFilter {
+    font-size: 1.2rem;
+    padding: 8px;
+    margin-bottom: 20px;
+  }
+  .profile strong,
+  .profile em,
+  .profile p,
+  .profile small {
+    display: block;            /* makes each text element stretch full width */
+    margin-bottom: 10px;
+  }
+  #pagination {
+    text-align: center;
+    margin-top: 20px;
+  }
+  #pagination button {
+    font-size: 1.2rem;
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+  }
+  #pagination button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  #pagination button.active {
+    background: #007BFF;
+    color: white;
+    border-color: #007BFF;
   }
 </style>
 </head>
@@ -22,12 +70,13 @@
   <option value="Freelance">Freelance</option>
 </select>
 
-<div id="profilesContainer"></div>
+<div id="profilesContainer" class="center"></div>
+<div id="pagination" class="center"></div>
 
 <script>
-// Sample data (replace with your full 128 profiles)
+// Your profiles data (truncated here, use full list you have)
 const profiles = [
-    {"name":"Olivia Bennett","profession":"Graphic Designer","about":"Creative designer specializing in branding and illustration.","availability":"Full-time"},
+{"name":"Olivia Bennett","profession":"Graphic Designer","about":"Creative designer specializing in branding and illustration.","availability":"Full-time"},
     {"name":"Ethan Parker","profession":"Data Scientist","about":"Loves turning data into actionable insights.","availability":"Part-time"},
     {"name":"Sophia Ramirez","profession":"Marketing Manager","about":"Experienced in digital marketing and SEO strategies.","availability":"Full-time"},
     {"name":"Liam Chen","profession":"Frontend Developer","about":"Focused on building intuitive user interfaces.","availability":"Freelance"},
@@ -523,48 +572,101 @@ const profiles = [
     {"name":"Ella Morgan","profession":"UX Researcher","about":"Studies user needs and feedback.","availability":"Freelance"},
     {"name":"Jack Turner","profession":"Backend Developer","about":"Builds backend services.","availability":"Full-time"},
     {"name":"Avery Carter","profession":"Product Manager","about":"Leads product teams.","availability":"Full-time"},
-    {"name":"Mason Turner","profession":"Data Engineer","about":"Builds data infrastructure.","availability":"Full-time"},
-    {"name":"Ella Brooks","profession":"Marketing Coordinator","about":"Supports marketing efforts.","availability":"Part-time"}
+    {"name":"Mason Turner","profession":"Data Engineer","about":"Builds data infrastructure.","availability":"Full-time"}
 ];
 
-// Reference to dropdown and container
+const itemsPerPage = 25;
+let currentPage = 1;
+let filteredProfiles = profiles.slice();
+
 const filterDropdown = document.getElementById('availabilityFilter');
 const profilesContainer = document.getElementById('profilesContainer');
+const paginationContainer = document.getElementById('pagination');
 
-// Function to render profiles
 function renderProfiles(list) {
-  profilesContainer.innerHTML = ''; // clear existing
-  if(list.length === 0) {
+  profilesContainer.innerHTML = '';
+  if (list.length === 0) {
     profilesContainer.innerHTML = '<p>No profiles found.</p>';
     return;
   }
   list.forEach(p => {
     const div = document.createElement('div');
     div.className = 'profile';
-    div.innerHTML = `<strong>${p.name}</strong> <br>
-                     <em>${p.profession}</em> <br>
+    div.innerHTML = `<strong>${p.name}</strong><br>
+                     <em>${p.profession}</em><br>
                      <p>${p.about}</p>
                      <small>Availability: ${p.availability}</small>`;
     profilesContainer.appendChild(div);
   });
 }
 
-// Function to filter based on selection
-function filterProfiles() {
-  const selected = filterDropdown.value;
-  if (selected === 'All') {
-    renderProfiles(profiles);
-  } else {
-    const filtered = profiles.filter(p => p.availability === selected);
-    renderProfiles(filtered);
+function createPagination(totalPages) {
+  paginationContainer.innerHTML = '';
+
+  // Previous Button
+  const prevBtn = document.createElement('button');
+  prevBtn.textContent = 'Previous';
+  prevBtn.disabled = currentPage === 1;
+  prevBtn.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage--;
+      updateDisplay();
+    }
+  });
+  paginationContainer.appendChild(prevBtn);
+
+  // Page Number Buttons
+  for (let i = 1; i <= totalPages; i++) {
+    const pageBtn = document.createElement('button');
+    pageBtn.textContent = i;
+    if (i === currentPage) {
+      pageBtn.classList.add('active');
+      pageBtn.disabled = true;
+    }
+    pageBtn.addEventListener('click', () => {
+      currentPage = i;
+      updateDisplay();
+    });
+    paginationContainer.appendChild(pageBtn);
   }
+
+  // Next Button
+  const nextBtn = document.createElement('button');
+  nextBtn.textContent = 'Next';
+  nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+  nextBtn.addEventListener('click', () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      updateDisplay();
+    }
+  });
+  paginationContainer.appendChild(nextBtn);
 }
 
-// Initialize display with all profiles
-renderProfiles(profiles);
+function filterProfiles() {
+  const selected = filterDropdown.value;
+  currentPage = 1; // reset page when filter changes
+  if (selected === 'All') {
+    filteredProfiles = profiles.slice();
+  } else {
+    filteredProfiles = profiles.filter(p => p.availability === selected);
+  }
+  updateDisplay();
+}
 
-// Add event listener for dropdown changes
+function updateDisplay() {
+  const totalPages = Math.ceil(filteredProfiles.length / itemsPerPage);
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  renderProfiles(filteredProfiles.slice(start, end));
+  createPagination(totalPages);
+}
+
+// Event listener for filter dropdown
 filterDropdown.addEventListener('change', filterProfiles);
+
+// Initial render
+filterProfiles();
 </script>
 
 </body>
