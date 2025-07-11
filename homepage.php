@@ -12,14 +12,14 @@
   <nav>
     <div class="logo-name">
       <div class="logo-image">
-        <img src="images/logo.png" alt="Mentorz">
+        <img src="images/logo.png" alt="">
       </div>
-      <span class="logo_name">MentorHub</span>
+      <span class="logo_name">Mentorz</span>
     </div>
 
     <div class="menu-items">
       <ul class="nav-links">
-        <li><a href="#">
+        <li><a href="homepage.php">
           <i class="uil uil-dashboard"></i>
           <span class="link-name">Dashboard</span>
         </a></li>
@@ -27,11 +27,11 @@
           <i class="uil uil-users-alt"></i>
           <span class="link-name">Mentors</span>
         </a></li>
-        <li><a href="#">
+        <li><a href="sesssions.php">
           <i class="uil uil-calendar-alt"></i>
           <span class="link-name">Sessions</span>
         </a></li>
-        <li><a href="#">
+        <li><a href="messages.php">
           <i class="uil uil-comments-alt"></i>
           <span class="link-name">Messages</span>
         </a></li>
