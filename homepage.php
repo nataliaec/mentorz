@@ -1,368 +1,217 @@
 <!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mentorz Dashboard</title>
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-</head>
-<body>
-  <nav>
-    <div class="logo-name">
-      <div class="logo-image">
-        <img src="images/logo.png" alt="Mentorz">
-      </div>
-      <span class="logo_name">MentorHub</span>
-    </div>
-
-    <div class="menu-items">
-      <ul class="nav-links">
-        <li><a href="#">
-          <i class="uil uil-dashboard"></i>
-          <span class="link-name">Dashboard</span>
-        </a></li>
-        <li><a href="mentors2.html">
-          <i class="uil uil-users-alt"></i>
-          <span class="link-name">Mentors</span>
-        </a></li>
-        <li><a href="#">
-          <i class="uil uil-calendar-alt"></i>
-          <span class="link-name">Sessions</span>
-        </a></li>
-        <li><a href="#">
-          <i class="uil uil-comments-alt"></i>
-          <span class="link-name">Messages</span>
-        </a></li>
-        <li><a href="profile.php">
-          <i class="uil uil-user-circle"></i>
-          <span class="link-name">Profile</span>
-        </a></li>
-      </ul>
-
-      <ul class="logout-mode">
-        <li><a href="#">
-          <i class="uil uil-signout"></i>
-          <span class="link-name">Logout</span>
-        </a></li>
-        <li class="mode">
-          <a href="#">
-            <i class="uil uil-moon"></i>
-            <span class="link-name">Dark Mode</span>
-          </a>
-          <div class="mode-toggle">
-            <span class="switch"></span>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <section class="dashboard">
-    <div class="top">
-      <i class="uil uil-bars sidebar-toggle"></i>
-      <div class="search-box">
-        <i class="uil uil-search"></i>
-        <input type="text" placeholder="Search mentors or topics...">
-      </div>
-    </div>
-
-    <div class="dash-content">
-      <div class="overview">
-        <div class="title">
-          <i class="uil uil-dashboard"></i>
-          <span class="text">Welcome to Mentorz</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Website Homepage HTML and CSS | CodingNepal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <h2 class="logo"><a href="#">CodingNepal</a></h2>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" id="hamburger-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+            <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </label>
+        <ul class="links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+        <div class="buttons">
+          <a href="#" class="signin">Sign In</a>
+          <a href="#" class="signup">Sign Up</a>
         </div>
-
-        <div class="boxes">
-          <div class="box box1">
-            <i class="uil uil-users-alt"></i>
-            <span class="text">Total Mentors</span>
-            <span class="number">128</span>
-          </div>
-          <div class="box box2">
-            <i class="uil uil-calendar-alt"></i>
-            <span class="text">Upcoming Sessions</span>
-            <span class="number">12</span>
-          </div>
-          <div class="box box3">
-            <i class="uil uil-user-check"></i>
-            <span class="text">Your Connections</span>
-            <span class="number">34</span>
-          </div>
+      </nav>
+    </header>
+    <section class="hero-section">
+      <div class="hero">
+        <h2>Mobile App Development</h2>
+        <p>
+          Join us in the exciting world of programming and turn your ideas into
+          reality. Unlock the world of endless possibilities - learn to code and
+          shape the digital future with us.
+        </p>
+        <div class="buttons">
+          <a href="#" class="join">Join Now</a>
+          <a href="#" class="learn">Learn More</a>
         </div>
       </div>
-
-      <div class="activity">
-        <div class="title">
-          <i class="uil uil-clock-three"></i>
-          <span class="text">Recent Mentor Activity</span>
-        </div>
-
-        <div class="activity-data">
-          <div class="data names">
-            <span class="data-title">Mentor</span>
-            <span class="data-list">Sarah Johnson</span>
-            <span class="data-list">Marcus Lee</span>
-            <span class="data-list">Ava Chen</span>
-            <span class="data-list">David Osei</span>
-            <span class="data-list">Elena Moretti</span>
-          </div>
-          <div class="data profession">
-            <span class="data-title">Field</span>
-            <span class="data-list">Software Engineering</span>
-            <span class="data-list">Marketing</span>
-            <span class="data-list">Product</span>
-            <span class="data-list">UX/UI</span>
-            <span class="data-list">Data Science</span>
-          </div>
-          <div class="data session">
-            <span class="data-title">Next Session</span>
-            <span class="data-list">July 12</span>
-            <span class="data-list">July 14</span>
-            <span class="data-list">July 15</span>
-            <span class="data-list">July 16</span>
-            <span class="data-list">July 18</span>
-          </div>
-          <div class="data status">
-            <span class="data-title">Status</span>
-            <span class="data-list">Available</span>
-            <span class="data-list">Booked</span>
-            <span class="data-list">Available</span>
-            <span class="data-list">Available</span>
-            <span class="data-list">Booked</span>
-          </div>
-        </div>
+      <div class="img">
+        <img src="https://www.codingnepalweb.com/demos/create-responsive-website-html-css/hero-bg.png" alt="hero image" />
       </div>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
-</body>
+    </section>
+  </body>
 </html>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
-:root {
-  --primary-color: #eaf4ff;
-  --secondary-color: #d0e8ff;
-  --accent-color: #3a8ddb;
-  --text-color: #333;
-  --light-text: #666;
-  --white: #fff;
-  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --transition: 0.3s ease-in-out;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
-
 body {
-  background-color: var(--primary-color);
-  color: var(--text-color);
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, #175d69 23%, #330c43 95%);
 }
-
-nav {
+.header {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
-  width: 240px;
-  background-color: var(--white);
-  box-shadow: var(--box-shadow);
-  padding: 20px 0;
-  transition: var(--transition);
+  width: 100%;
 }
-
-.logo-name {
+.navbar {
   display: flex;
   align-items: center;
-  padding: 0 20px;
-}
-
-.logo-image img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.logo_name {
-  font-size: 20px;
-  font-weight: 600;
-  margin-left: 10px;
-  color: var(--accent-color);
-}
-
-.menu-items {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  height: calc(100% - 90px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 15px;
 }
-
-.nav-links li,
-.logout-mode li {
-  list-style: none;
-}
-
-.nav-links a,
-.logout-mode a {
-  display: flex;
-  align-items: center;
-  padding: 12px 20px;
-  color: var(--text-color);
+.navbar .logo a {
+  font-size: 1.8rem;
   text-decoration: none;
-  transition: var(--transition);
+  color: #fff;
 }
-
-.nav-links a:hover,
-.logout-mode a:hover {
-  background-color: var(--secondary-color);
-  color: var(--accent-color);
-  border-left: 4px solid var(--accent-color);
-}
-
-.nav-links i,
-.logout-mode i {
-  font-size: 20px;
-  margin-right: 10px;
-}
-
-.dashboard {
-  margin-left: 240px;
-  padding: 30px;
-  background-color: var(--primary-color);
-  min-height: 100vh;
-  transition: var(--transition);
-}
-
-.top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.search-box {
+.navbar .links {
   display: flex;
   align-items: center;
-  position: relative;
-  max-width: 400px;
-  width: 100%;
+  list-style: none;
+  gap: 35px;
 }
-
-.search-box input {
-  width: 100%;
-  padding: 10px 15px 10px 40px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  outline: none;
-  font-size: 14px;
-}
-
-.search-box i {
-  position: absolute;
-  left: 12px;
-  color: var(--light-text);
-  font-size: 18px;
-}
-
-.dash-content .title {
-  display: flex;
-  align-items: center;
-  margin: 30px 0 20px;
-}
-
-.dash-content .title i {
-  font-size: 24px;
-  color: var(--accent-color);
-  background-color: var(--white);
-  padding: 8px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.dash-content .title .text {
-  font-size: 22px;
+.navbar .links a {
   font-weight: 500;
-  color: var(--text-color);
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 0;
+  transition: 0.2s ease;
 }
-
-.boxes {
+.navbar .links a:hover {
+  color: #47b2e4;
+}
+.navbar .buttons a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 15px 0;
+  transition: 0.2s ease;
+}
+.navbar .buttons a:not(:last-child) {
+  margin-right: 30px;
+}
+.navbar .buttons .signin:hover {
+  color: #47b2e4;
+}
+.navbar .buttons .signup {
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  border-radius: 0.375rem;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.navbar .buttons .signup:hover {
+  background-color: #47b2e4;
+  color: #fff;
+}
+.hero-section {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 95vh;
+  padding: 0 15px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
-.box {
-  flex: 1;
-  min-width: 220px;
-  background-color: var(--white);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: var(--box-shadow);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: var(--transition);
+.hero-section .hero {
+  max-width: 50%;
+  color: #fff;
 }
-
-.box:hover {
-  transform: translateY(-5px);
-}
-
-.box i {
-  font-size: 28px;
-  color: var(--accent-color);
-  margin-bottom: 10px;
-}
-
-.box .text {
-  font-size: 14px;
-  color: var(--light-text);
-}
-
-.box .number {
-  font-size: 28px;
-  font-weight: 600;
-  color: var(--text-color);
-}
-
-.activity {
-  margin-top: 40px;
-}
-
-.activity .title {
+.hero h2 {
+  font-size: 2.5rem;
   margin-bottom: 20px;
 }
-
-.activity-data {
-  display: flex;
-  overflow-x: auto;
-  padding-bottom: 10px;
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #c9c7c7;
 }
-
-.data {
-  min-width: 150px;
-  margin-right: 20px;
+.hero-section .img img {
+  width: 517px;
 }
-
-.data-title {
-  font-size: 16px;
+.hero-section .buttons {
+  margin-top: 40px;
+}
+.hero-section .buttons a {
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 0.375rem;
   font-weight: 600;
-  color: var(--accent-color);
+  transition: 0.2s ease;
+  display: inline-block;
 }
-
-.data-list {
-  margin-top: 10px;
-  font-size: 14px;
-  color: var(--text-color);
-  line-height: 1.8;
+.hero-section .buttons a:not(:last-child) {
+  margin-right: 15px;
+}
+.buttons .join {
+  background-color: #47b2e4;
+}
+.hero-section .buttons .learn {
+  border: 1px solid #fff;
+  border-radius: 0.375rem;
+}
+.hero-section .buttons a:hover {
+  background-color: #47b2e4;
+}
+/* Hamburger menu styles */
+#menu-toggle {
+  display: none;
+}
+#hamburger-btn {
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  order: 1;
+}
+@media screen and (max-width: 1023px) {
+  .navbar .logo a {
+    font-size: 1.5rem;
+  }
+  .links {
+    position: fixed;
+    left: -100%;
+    top: 75px;
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px;
+    background: #175d69;
+    flex-direction: column;
+    transition: 0.3s ease;
+  }
+  .navbar #menu-toggle:checked ~ .links {
+    left: 0;
+  }
+  .navbar #hamburger-btn {
+    display: block;
+  }
+  .header .buttons {
+    display: none;
+  }
+  .hero-section .hero {
+    max-width: 100%;
+    text-align: center;
+  }
+  .hero-section img {
+    display: none;
+  }
 }
 </style>
