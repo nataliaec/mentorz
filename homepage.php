@@ -10,7 +10,11 @@
   <body>
     <header class="header">
       <nav class="navbar">
-        <h2 class="logo"><a href="#">Mentorz</a></h2>
+        <div class="img">
+        <img src="image.png" alt="Mentorz logo" width = 25% height = 25%/>
+      </div>
+      <h1>Mentorz</h1>
+         
         <input type="checkbox" id="menu-toggle" />
         <label for="menu-toggle" id="hamburger-btn">
           <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
@@ -25,9 +29,11 @@
           <li><a href="#">Learn More</a></li>
         </ul>
         <div class="buttons">
-          <a href="#" class="signin">Sign In</a>
-          <a href="#" class="signup">Sign Up</a>
+          <a href="index.html" class="signin">Sign In</a>
+          <a href="index.html" class="signup">Sign Up</a>
         </div>
+        <div>
+        
       </nav>
     </header>
     <section class="hero-section">
@@ -106,7 +112,7 @@ body {
   margin-right: 30px;
 }
 .navbar .buttons .signin:hover {
-  color: #47b2e4;
+  color:rgb(132, 144, 146);
 }
 .navbar .buttons .signup {
   border: 1px solid #fff;
@@ -116,7 +122,7 @@ body {
   transition: 0.2s ease;
 }
 .navbar .buttons .signup:hover {
-  background-color: #47b2e4;
+  background-color:rgb(19, 79, 89);
   color: #fff;
 }
 .hero-section {
@@ -139,7 +145,7 @@ body {
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 20px;
-  color: #c9c7c7;
+  color: #ececec;
 }
 .hero-section .img img {
   width: 517px;
@@ -160,14 +166,14 @@ body {
   margin-right: 15px;
 }
 .buttons .join {
-  background-color: #47b2e4;
+  background-color:rgb(19, 79, 89);
 }
 .hero-section .buttons .learn {
   border: 1px solid #fff;
   border-radius: 0.375rem;
 }
 .hero-section .buttons a:hover {
-  background-color: #47b2e4;
+  background-color:rgb(19, 79, 89);
 }
 /* Hamburger menu styles */
 #menu-toggle {
