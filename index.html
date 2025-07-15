@@ -6,6 +6,10 @@
   <title>Mentorz | Login & Signup</title>
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
   <style>
+    .logo {
+  width: 200px;
+  height: auto;
+}
     * {
       margin: 0;
       padding: 0;
@@ -18,7 +22,7 @@
       height: 100%;
       width: 100%;
       place-items: center;
-      background: linear-gradient(to right, #3a8ddb, #65aee0, #a2d2f2);
+      background: linear-gradient(to right, #175d69, #2c8193, #3aa4c2, #47b2e4);
     }
 
     ::selection {
@@ -90,7 +94,7 @@
       left: 0;
       z-index: 0;
       border-radius: 5px;
-      background: linear-gradient(to right, #3a8ddb, #65aee0, #a2d2f2);
+      background: linear-gradient(to right, #175d69, #2c8193, #3aa4c2, #47b2e4);
       transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
     }
 
@@ -102,24 +106,16 @@
       left: 50%;
     }
 
-    #signup:checked ~ label.signup {
-      color: #fff;
-      cursor: default;
-      user-select: none;
-    }
+#signup:checked ~ label.signup,
+#login:checked ~ label.login {
+  color: #fff;
+}
 
-    #signup:checked ~ label.login {
-      color: #000;
-    }
+#signup:checked ~ label.login,
+#login:checked ~ label.signup {
+  color: #175d69;
+}
 
-    #login:checked ~ label.signup {
-      color: #000;
-    }
-
-    #login:checked ~ label.login {
-      cursor: default;
-      user-select: none;
-    }
 
     .form-container {
       width: 100%;
@@ -172,17 +168,15 @@
       margin-top: 30px;
     }
 
-    .form-inner form .pass-link a,
-    .form-inner form .signup-link a {
-      color: #65aee0;
-      text-decoration: none;
-    }
+.form-inner form .pass-link a,
+.form-inner form .signup-link a {
+  color: #2c8193;
+}
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover {
+  color: #175d69;
+}
 
-    .form-inner form .pass-link a:hover,
-    .form-inner form .signup-link a:hover {
-      text-decoration: underline;
-      color: #3a8ddb;
-    }
 
     .btn {
       height: 50px;
@@ -193,14 +187,15 @@
     }
 
     .btn-layer {
-      height: 100%;
-      width: 300%;
-      position: absolute;
-      left: -100%;
-      background: linear-gradient(to right, #3a8ddb, #65aee0, #a2d2f2);
-      border-radius: 5px;
-      transition: all 0.4s ease;
-    }
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  background: linear-gradient(to right, #175d69, #2c8193, #3aa4c2, #47b2e4);
+  border-radius: 5px;
+  transition: all 0.4s ease;
+}
+
 
     .btn:hover .btn-layer {
       left: 0;
@@ -225,7 +220,7 @@
 <body>
 
   <!-- Logo -->
-  <img src="Screenshot_2025-07-10_at_10-04-32_Bulk_image_resize_tool_ImageResizer.com-removebg-preview.png" alt="Mentorz logo" class="center">
+  <img src="logo.png" alt="Mentorz logo" class="logo">
 
   <!-- Login & Signup Wrapper -->
   <div class="wrapper">
