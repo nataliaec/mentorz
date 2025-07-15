@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,7 +10,7 @@
   <body>
     <header class="header">
       <nav class="navbar">
-        <h2 class="logo"><a href="#">CodingNepal</a></h2>
+        <h2 class="logo"><a href="#">Mentorz</a></h2>
         <input type="checkbox" id="menu-toggle" />
         <label for="menu-toggle" id="hamburger-btn">
           <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
@@ -18,11 +18,11 @@
           </svg>
         </label>
         <ul class="links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="homepage.php">Home</a></li>
+          <li><a href="sesssions.php">Sessions</a></li>
+          <li><a href="mentors2.html">Mentors</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Learn More</a></li>
         </ul>
         <div class="buttons">
           <a href="#" class="signin">Sign In</a>
@@ -32,20 +32,18 @@
     </header>
     <section class="hero-section">
       <div class="hero">
-        <h2>Mobile App Development</h2>
+        <h2>Connect with mentors</h2>
         <p>
           Join us in the exciting world of programming and turn your ideas into
-          reality. Unlock the world of endless possibilities - learn to code and
+          reality. Unlock the world of endless possibilities - learn to code, connect with mentors and
           shape the digital future with us.
         </p>
         <div class="buttons">
-          <a href="#" class="join">Join Now</a>
+          <a href="#" class="join">Connect</a>
           <a href="#" class="learn">Learn More</a>
         </div>
       </div>
-      <div class="img">
-        <img src="https://www.codingnepalweb.com/demos/create-responsive-website-html-css/hero-bg.png" alt="hero image" />
-      </div>
+      
     </section>
   </body>
 </html>
@@ -60,7 +58,7 @@
 body {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(to bottom, #175d69 23%, #330c43 95%);
+  background: linear-gradient(to bottom,rgb(19, 79, 89) 23%,rgb(117, 195, 209) 95%);
 }
 .header {
   position: fixed;
