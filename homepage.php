@@ -212,8 +212,8 @@
           <li><a href="#">Learn More</a></li>
         </ul>
         <div class="buttons">
-          <a href="#" class="signin">Sign In</a>
-          <a href="#" class="signup">Sign Up</a>
+          <a href="index.html" class="signin">Sign In</a>
+          <a href="index.html" class="signup">Sign Up</a>
         </div>
       </nav>
     </header>
