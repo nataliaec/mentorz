@@ -210,7 +210,7 @@ body {
     }
 
     nav {
-      background: #0077cc;
+      background:rgb(19, 79, 89);
       color: white;
       padding: 1rem 2rem;
       display: flex;
@@ -230,7 +230,7 @@ body {
     }
 
     h1 {
-      color: #0077cc;
+      color:rgb(19, 79, 89);
       margin-bottom: 1.5rem;
     }
 
