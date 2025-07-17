@@ -99,7 +99,7 @@
         margin: 0 auto;
       }
       .hero-section .hero {
-        max-width: 50%;
+        max-width: 75%;
         color: #fff;
       }
       .hero h2 {
@@ -110,6 +110,10 @@
         font-size: 1.2rem;
         margin-bottom: 20px;
         color: #c9c7c7;
+      }
+      .hero  {
+        display: flex;
+        flex-direction: row;
       }
       .hero-section .img img {
         width: 517px;
@@ -220,6 +224,7 @@
 
     <section class="hero-section">
       <div class="hero">
+        <div>
         <h2>Connect with mentors</h2>
         <p>
           Join us in the exciting world of programming and turn your ideas into
@@ -227,9 +232,13 @@
           shape the digital future with us.
         </p>
         <div class="buttons">
-          <a href="#" class="join">Connect</a>
+          <a href="mentors2.html" class="join">Connect</a>
           <a href="#" class="learn">Learn More</a>
         </div>
+    </div>
+    <div> 
+      <img src="https://miro.medium.com/v2/resize:fit:1400/1*qcZKMpIXdQ0DhSbkvNmjng.png" width = "300" height = "auto"/>
+    </div>
       </div>
     </section>
   </body>
